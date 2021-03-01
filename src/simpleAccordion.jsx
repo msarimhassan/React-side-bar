@@ -5,16 +5,34 @@ import AccordionDetails from '@material-ui/core/AccordionDetails';
 import Typography from '@material-ui/core/Typography';
  import AddIcon from '@material-ui/icons/Add';
  import CloseIcon from '@material-ui/icons/Close';
- import {Checkbox} from '@material-ui/core';
+ import {Button,Checkbox} from '@material-ui/core';
 import "./Sidebar.css";
 
 export default function SimpleAccordion(props) {
+
+  const Array=props.arrayName;
+  console.log(Array);
+
+  const items=[];
+  for(var i=0;i<2;i++)
+  {
+    items.push(<div>
+      <Checkbox key={Array[i].key} value="checkedA"/>
+      <span style={{color:"#999999"}}>{Array[i].Name}</span>
+      </div>)
+  }
     
    const[iconName,setIcon]= useState(false);
- 
+   const[extra,setExtra]= useState(true);
+   const[count,setCount]= useState(props.arrayName.length-2);
    function handleClick(){
      setIcon(!iconName);
    }
+   function handleExtra(){
+     setExtra(!extra);
+     setCount(0);
+   }
+
     return (
        
       <React.Fragment>
@@ -25,13 +43,16 @@ export default function SimpleAccordion(props) {
           </AccordionSummary>
           <AccordionDetails >
             <Typography>
-              { props.arrayName.map((brand,key)=> {
+              
+              {extra ? items :    props.arrayName.map((brand,key)=> {
            return(  <div>
                <Checkbox key={brand.key} value="checkedA"/>
                <span style={{color:"#999999"}}>{brand.Name}</span>
                </div>)
-             })}           
-             <p>+{props.arrayName.length} more</p> 
+             })}  
+             <Button style={{color:"#FF7F7F"}} onClick={handleExtra}>+{count} more</Button> 
+            
+
            </Typography>
           </AccordionDetails>
           </Accordion>
