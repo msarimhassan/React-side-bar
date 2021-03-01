@@ -16,16 +16,17 @@ export default function SimpleAccordion(props) {
    function handleClick(){
      setIcon(!iconName);
    }
-   console.log(props.arrayName);
     return (
+       
       <React.Fragment>
+    
         <Accordion style={{boxShadow:"0px 0px 0px "}} >
           <AccordionSummary expandIcon={iconName ? <CloseIcon /> : <AddIcon/>} onClick={handleClick}>
             <Typography style={{color:"#333333",fontWeight:"bolder"}}>{props.children}</Typography >
           </AccordionSummary>
           <AccordionDetails >
             <Typography>
-            { brands.map((brand)=> 
+          { props.brands.map((brand)=> 
              { return <div><Checkbox key={brand.key} value="checkedA"/><span style={{color:"#999999"}}>{brand.Name}</span></div> })  } 
             </Typography>
           </AccordionDetails>
