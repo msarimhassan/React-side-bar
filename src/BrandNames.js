@@ -21,6 +21,7 @@ const brands = [
   },
 ];
 
+// second array
 const brands1 = [
   {
     key: 1,
@@ -45,6 +46,10 @@ const brands1 = [
   {
     key: 6,
     Name: "Lunch",
+  },
+  {
+    key: 7,
+    Name: "Sarim Lun KHA",
   },
 ];
 
