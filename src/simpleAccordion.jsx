@@ -15,9 +15,10 @@ export default function SimpleAccordion(props) {
    function handleClick(){
      setIcon(!iconName);
    }
-
     return (
+       
       <React.Fragment>
+    
         <Accordion style={{boxShadow:"0px 0px 0px "}} >
           <AccordionSummary expandIcon={iconName ? <CloseIcon /> : <AddIcon/>} onClick={handleClick}>
             <Typography style={{color:"#333333",fontWeight:"bolder"}}>{props.children}</Typography >

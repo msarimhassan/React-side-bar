@@ -5,6 +5,8 @@ import "./Sidebar.css";
 import {brands,stores,catogeries,price} from "./allData.js";
 
 function App() {
+  console.log("I am in App component", brands);
+
   return (
     <div className="sidenav">
     <SimpleAccordion children="Categories" arrayName={catogeries} />
@@ -16,6 +18,5 @@ function App() {
     <SimpleAccordion children="Price" arrayName={price} />  
 </div>
   );
-}
-
-export default App;
+  }
+  export default App;
