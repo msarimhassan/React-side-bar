@@ -2,7 +2,8 @@ import React from "react";
 import { Button, Checkbox } from "@material-ui/core";
 import SimpleAccordion from "./simpleAccordion";
 import "./Sidebar.css";
-import brands from "./BrandNames";
+import { brands } from "./BrandNames";
+import { brands1 } from "./BrandNames";
 
 function App() {
   console.log("I am in App component", brands);
@@ -16,7 +17,7 @@ function App() {
         <hr style={{ color: "#999999" }} />
         <SimpleAccordion children="Stores" brands={brands} />
         <hr style={{ color: "#999999" }} />
-        <SimpleAccordion children="Price" brands={brands} />
+        <SimpleAccordion children="Price" brands={brands1} />
       </div>
     </React.Fragment>
   );
