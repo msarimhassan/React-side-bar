@@ -6,17 +6,16 @@ import Typography from '@material-ui/core/Typography';
  import AddIcon from '@material-ui/icons/Add';
  import CloseIcon from '@material-ui/icons/Close';
  import {Checkbox} from '@material-ui/core';
- import brands from './BrandNames';
-
+import "./Sidebar.css";
 
 export default function SimpleAccordion(props) {
     
    const[iconName,setIcon]= useState(false);
-  
+ 
    function handleClick(){
      setIcon(!iconName);
    }
-   console.log(props.arrayName);
+
     return (
       <React.Fragment>
         <Accordion style={{boxShadow:"0px 0px 0px "}} >
@@ -25,9 +24,14 @@ export default function SimpleAccordion(props) {
           </AccordionSummary>
           <AccordionDetails >
             <Typography>
-            { brands.map((brand)=> 
-             { return <div><Checkbox key={brand.key} value="checkedA"/><span style={{color:"#999999"}}>{brand.Name}</span></div> })  } 
-            </Typography>
+              { props.arrayName.map((brand,key)=> {
+           return(  <div>
+               <Checkbox key={brand.key} value="checkedA"/>
+               <span style={{color:"#999999"}}>{brand.Name}</span>
+               </div>)
+             })}           
+             <p>+{props.arrayName.length} more</p> 
+           </Typography>
           </AccordionDetails>
           </Accordion>
          
