@@ -24,13 +24,12 @@ export default function SimpleAccordion(props) {
     
    const[iconName,setIcon]= useState(false);
    const[extra,setExtra]= useState(true);
-   const[count,setCount]= useState(props.arrayName.length-2);
    function handleClick(){
      setIcon(!iconName);
+     setExtra(true);
    }
    function handleExtra(){
      setExtra(!extra);
-     setCount(0);
    }
 
     return (
@@ -50,7 +49,7 @@ export default function SimpleAccordion(props) {
                <span style={{color:"#999999"}}>{brand.Name}</span>
                </div>)
              })}  
-             <Button style={{color:"#FF7F7F"}} onClick={handleExtra}>+{count} more</Button> 
+             <Button style={{color:"#FF7F7F",textTransform:"lowercase"}} onClick={handleExtra}>+{extra ? props.arrayName.length-2 : 0} more</Button> 
             
 
            </Typography>

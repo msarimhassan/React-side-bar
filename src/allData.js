@@ -36,6 +36,14 @@ const brands =[
         {
             key:2,
             Name:'Stores',
+        },
+        {
+            key:3,
+            Name:'Brands',
+        },
+        {
+            key:4,
+            Name:'Bomber Jackets',
         }
     ]
     const price=[
