@@ -50,12 +50,11 @@ export default function SimpleAccordion(props) {
                </div>)
              })}  
              <Button style={{color:"#FF7F7F",textTransform:"lowercase"}} onClick={handleExtra}>+{extra ? props.arrayName.length-2 : 0} more</Button> 
-            
+             
 
            </Typography>
           </AccordionDetails>
           </Accordion>
-         
           </React.Fragment>
     
   );

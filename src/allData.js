@@ -44,7 +44,31 @@ const brands =[
         {
             key:4,
             Name:'Bomber Jackets',
-        }
+        },
+        {
+            key:5,
+            Name:'Bomber Jackets',
+        },
+        {
+            key:6,
+            Name:'Bomber Jackets',
+        },
+        {
+            key:7,
+            Name:'Bomber Jackets',
+        },
+        {
+            key:8,
+            Name:'Bomber Jackets',
+        },
+        {
+            key:9,
+            Name:'Bomber Jackets',
+        },
+        {
+            key:10,
+            Name:'Bomber Jackets',
+        },
     ]
     const price=[
         {
