@@ -1,5 +1,5 @@
- const Data =
- {
+ var Data =
+' {
 	{
 		'approved': 'true',
 		'sellerType': 'brand',
@@ -90,5 +90,5 @@
 		'price': '5000',
 		'sellerName': 'Moazzam store',
 	},
-}
+};
  export default Data;
