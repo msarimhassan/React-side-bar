@@ -10,15 +10,15 @@ import "./Sidebar.css";
 
 export default function SimpleAccordion(props) {
 
-  const Array=props.arrayName;
-  console.log(Array);
+   const Arrray=props.arrayName;  
 
+   console.log("I am Array",Arrray)
   const items=[];
-  for(var i=0;i<2;i++)
+  for(var i=0;i<4;i++)
   {
     items.push(<div>
-      <Checkbox key={Array[i].key} value="checkedA"/>
-      <span style={{color:"#999999"}}>{Array[i].Name}</span>
+      <Checkbox  value="checkedA"/>
+      <span style={{color:"#999999"}}>{Arrray[i]}</span>
       </div>)
   }
     
@@ -42,14 +42,13 @@ export default function SimpleAccordion(props) {
           </AccordionSummary>
           <AccordionDetails >
             <Typography>
-              
-              {extra ? items :    props.arrayName.map((brand,key)=> {
-           return(  <div>
-               <Checkbox key={brand.key} value="checkedA"/>
-               <span style={{color:"#999999"}}>{brand.Name}</span>
+             {extra ? items :    props.arrayName.map((brand,key)=> {
+           return(  <div key ={key}>
+               <Checkbox key={key} value="checkedA"/>
+               <span style={{color:"#999999"}} key={key}>{brand}</span>
                </div>)
              })}  
-             <Button style={{color:"#FF7F7F",textTransform:"lowercase"}} onClick={handleExtra}>+{extra ? props.arrayName.length-2 : 0} more</Button> 
+             <Button style={{color:"#FF7F7F",textTransform:"lowercase"}} onClick={handleExtra}>+{extra ? props.arrayName.length-4 : 0} more</Button> 
              
 
            </Typography>
