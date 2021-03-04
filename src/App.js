@@ -16,7 +16,7 @@ function App() {
 
   const [arrayBrand, setArrayBrand] = useState([]);
 
-  // const [arrayStore, setArrayStore] = useState([]);
+   const [arrayStore, setArrayStore] = useState([]);
 
   useEffect(() => {
     const arraySorting = () => {
@@ -51,6 +51,10 @@ function App() {
         console.log("I am BRAAAAAAAAAAAAAAAAND", object);
         arrayBrand.push(object);
       });
+      myStore.forEach((object) => {
+        console.log("I am BRAAAAAAAAAAAAAAAAND", object);
+        arrayStore.push(object);
+      });
 
       const maxPrice = Math.max(...arrayPrice);
       const minPrice = Math.min(...arrayPrice);
@@ -66,13 +70,12 @@ function App() {
   // <hr style={{ color: "#999999"}}/>
   return (
     <div className="sidenav">
-      {/* <SimpleAccordion children="Categories" arrayName={catogeries} /> */}
+  
 
       <SimpleAccordion children="Brands" arrayName={arrayBrand} />
 
-      {/* <SimpleAccordion children="Stores" arrayName={stores} />
-
-      <SimpleAccordion children="Price" arrayName={price} /> */}
+       <SimpleAccordion children="Stores" arrayName={arrayStore} />
+ 
     </div>
   );
 }
