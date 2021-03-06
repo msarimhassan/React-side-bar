@@ -14,7 +14,7 @@ export default function SimpleAccordion(props) {
 
    console.log("I am Array",Arrray)
   const items=[];
-  for(var i=0;i<1;i++)
+  for(var i=0;i<props.loopCounter;i++)
   {
     items.push(<div>
       <Checkbox  value="checkedA"/>
@@ -48,7 +48,7 @@ export default function SimpleAccordion(props) {
                <span style={{color:"#999999"}} key={key}>{brand}</span>
                </div>)
              })}  
-             <Button style={{color:"#FF7F7F",textTransform:"lowercase"}} onClick={handleExtra}>+{extra ? props.arrayName.length-1 : 0} more</Button> 
+             <Button style={{color:"#FF7F7F",textTransform:"lowercase"}} onClick={handleExtra}>+{extra ? props.arrayName.length-props.loopCounter : 0} more</Button> 
              
 
            </Typography>

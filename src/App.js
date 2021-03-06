@@ -18,7 +18,7 @@ function App() {
 
    const [arrayStore, setArrayStore] = useState([]);
 
-  useEffect(() => {
+   function ManageArray(){
     const arraySorting = () => {
       data.forEach((object) => {
         console.log("objectsss", object);
@@ -63,7 +63,11 @@ function App() {
     arraySorting();
 
     console.log("Brand array has these names", arrayBrand);
+   }
 
+  useEffect(() => {
+
+     ManageArray();
     // eslint-disable-next-line
   }, []);
 
@@ -72,9 +76,9 @@ function App() {
     <div className="sidenav">
   
 
-      <SimpleAccordion children="Brands" arrayName={arrayBrand} />
+      <SimpleAccordion children="Brands" arrayName={arrayBrand} loopCounter={4} />
 
-       <SimpleAccordion children="Stores" arrayName={arrayStore} />
+       <SimpleAccordion children="Stores" arrayName={arrayStore} loopCounter={1} />
  
     </div>
   );
