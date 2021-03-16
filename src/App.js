@@ -58,8 +58,21 @@ function App() {
         arrayStore.push(object);
       });
 
+      console.log("Array Priceeeeeeeeeeeeeeeeeeeeee", arrayPrice);
       const maxPrice = Math.max(...arrayPrice);
       const minPrice = Math.min(...arrayPrice);
+
+      let sum = 0;
+
+      arrayPrice.map((price) => {
+        sum += parseInt(price);
+      });
+
+      // How many chunks should we divide our price category into
+      console.log("my array lenght isss", arrayPrice.length);
+      const average = sum / arrayPrice.length;
+      console.log("Summmmm is", sum);
+      console.log("averageeee issss", average);
       console.log("Max and Min", maxPrice, minPrice);
     };
     arraySorting();
@@ -73,30 +86,26 @@ function App() {
   // <hr style={{ color: "#999999"}}/>
   return (
     <React.Fragment>
-    <div className="sidenav">
-<<<<<<< HEAD
-      <SimpleAccordion
-        children="Brands"
-        arrayName={arrayBrand}
-        loopCounter={4}
-      />
+      <div className="sidenav">
+        <SimpleAccordion
+          children="Brands"
+          arrayName={arrayBrand}
+          loopCounter={4}
+        />
 
-      <SimpleAccordion
-        children="Stores"
-        arrayName={arrayStore}
-        loopCounter={1}
-      />
-=======
-  
+        <SimpleAccordion
+          children="Stores"
+          arrayName={arrayStore}
+          loopCounter={1}
+        />
+        <SimpleAccordion
+          children="Brands"
+          arrayName={arrayBrand}
+          loopCounter={3}
+        />
 
-      <SimpleAccordion children="Brands" arrayName={arrayBrand} loopCounter={4} />
-
-       <SimpleAccordion children="Stores" arrayName={arrayStore} loopCounter={1} />
-       <SimpleAccordion children="Brands" arrayName={arrayBrand} loopCounter={3} />
-      
- 
->>>>>>> 8b601f32dc20a690f32da34a50e5c3ae6eae75cc
-    </div>
+        <SimpleAccordion children="Price" arrayName={arrayBrand} />
+      </div>
     </React.Fragment>
   );
 }
