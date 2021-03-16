@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import SimpleAccordion from "./simpleAccordion";
-import "./Sidebar.css";
-import { brands, stores, catogeries, price } from "./allData.js";
+import SimpleAccordion from "./components/Simpleaccordion/simpleAccordion";
+import "./components/Simpleaccordion/simpleAccordion.css";
+
 import data from "./Data.json";
 
 function App() {
@@ -73,14 +73,18 @@ function App() {
 
   // <hr style={{ color: "#999999"}}/>
   return (
+    <React.Fragment>
     <div className="sidenav">
   
 
       <SimpleAccordion children="Brands" arrayName={arrayBrand} loopCounter={4} />
 
        <SimpleAccordion children="Stores" arrayName={arrayStore} loopCounter={1} />
+       <SimpleAccordion children="Brands" arrayName={arrayBrand} loopCounter={3} />
+      
  
     </div>
+    </React.Fragment>
   );
 }
 export default App;
