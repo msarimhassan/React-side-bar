@@ -4,21 +4,23 @@ import "./Sidebar.css";
 import { brands, stores, catogeries, price } from "./allData.js";
 import data from "./Data.json";
 
+const array = [];
+const arrayPrice = [];
+const arrayBrand = [];
+const arrayStore = [];
+
 function App() {
   console.log("I am the Json Data", data);
 
   const myBrand = new Set();
   const myStore = new Set();
 
-  const [array, setArray] = useState([]);
+  // const [array, setArray] = useState([]);
+  // const [arrayPrice, setArrayPrice] = useState([]);
+  // const [arrayBrand, setArrayBrand] = useState([]);
+  // const [arrayStore, setArrayStore] = useState([]);
 
-  const [arrayPrice, setArrayPrice] = useState([]);
-
-  const [arrayBrand, setArrayBrand] = useState([]);
-
-   const [arrayStore, setArrayStore] = useState([]);
-
-   function ManageArray(){
+  function ManageArray() {
     const arraySorting = () => {
       data.forEach((object) => {
         console.log("objectsss", object);
@@ -61,25 +63,27 @@ function App() {
       console.log("Max and Min", maxPrice, minPrice);
     };
     arraySorting();
-
-    console.log("Brand array has these names", arrayBrand);
-   }
+  }
 
   useEffect(() => {
-
-     ManageArray();
+    ManageArray();
     // eslint-disable-next-line
   }, []);
 
   // <hr style={{ color: "#999999"}}/>
   return (
     <div className="sidenav">
-  
+      <SimpleAccordion
+        children="Brands"
+        arrayName={arrayBrand}
+        loopCounter={4}
+      />
 
-      <SimpleAccordion children="Brands" arrayName={arrayBrand} loopCounter={4} />
-
-       <SimpleAccordion children="Stores" arrayName={arrayStore} loopCounter={1} />
- 
+      <SimpleAccordion
+        children="Stores"
+        arrayName={arrayStore}
+        loopCounter={1}
+      />
     </div>
   );
 }
