@@ -6,7 +6,7 @@ import Typography from '@material-ui/core/Typography';
  import AddIcon from '@material-ui/icons/Add';
  import CloseIcon from '@material-ui/icons/Close';
  import {Button,Checkbox} from '@material-ui/core';
-import "./Sidebar.css";
+import "./simpleAccordion.css";
 
 export default function SimpleAccordion(props) {
 
